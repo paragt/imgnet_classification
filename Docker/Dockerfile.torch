@@ -1,0 +1,19 @@
+FROM nvidia/cuda:9.1-cudnn7-devel-ubuntu16.04
+
+
+RUN apt-get update
+RUN apt-get -y upgrade
+RUN apt-get install -y python
+RUN apt-get install libglib2.0-0 -y
+RUN apt-get install -y python-pip python-sklearn
+
+RUN pip install opencv_python==3.2.0.7
+RUN pip install numpy==1.11.3
+RUN pip install scipy==0.18.1
+RUN pip install h5py==2.6.0
+RUN pip install torch torchvision
+RUN pip install tensorboardX==0.8
+## for tensorboard web server
+RUN pip install tensorflow==1.2.0
+
+WORKDIR /
